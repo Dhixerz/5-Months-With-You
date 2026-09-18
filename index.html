@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>5 Months With You</title>
+  <meta name="description" content="Happy 5 Months of Dating Baby! A special little webbie made with love for you.">
+  <meta name="theme-color" content="#1a0b1c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <!-- Google Fonts: Outfit for clean modern reading & Caveat / Playfair for romantic accent -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Ambient Romantic Background Effects -->
+  <div class="ambient-glow glow-top"></div>
+  <div class="ambient-glow glow-bottom"></div>
+  <canvas id="hearts-canvas"></canvas>
+
+  <!-- Back Navigation Button (Persistent on Screen 2, 3, 4) -->
+  <button id="back-btn" class="back-btn hidden" aria-label="Go Back" title="Kembali ke halaman sebelumnya">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"
+      stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="15 18 9 12 15 6"></polyline>
+    </svg>
+    <span class="back-label">Back</span>
+  </button>
+
+  <!-- Sound Toggle Control (Persistent across video pages) -->
+  <button id="sound-btn" class="sound-toggle-btn hidden" aria-label="Toggle Sound" title="Toggle Sound">
+    <span class="sound-icon sound-on">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+      </svg>
+    </span>
+    <span class="sound-icon sound-off hidden">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+        <line x1="23" y1="9" x2="17" y2="15"></line>
+        <line x1="17" y1="9" x2="23" y2="15"></line>
+      </svg>
+    </span>
+    <span class="sound-label">Audio On</span>
+  </button>
+
+  <!-- Main Container -->
+  <main class="app-container">
+
+    <!-- SCREEN 1: First Page / Welcome Screen -->
+    <section id="screen-1" class="screen screen-active">
+      <div class="screen-content intro-content">
+        <div class="pill-badge animate-fade-in">
+          <span class="sparkle">✨</span> Our Love Story <span class="sparkle">✨</span>
+        </div>
+
+        <div class="hero-card glassmorphism animate-pop-up">
+          <div class="heart-pulse-icon">💖</div>
+          <h1 class="main-title">Happy 5 Months of Dating Baby!!</h1>
+          <p class="subtitle">Time flies when I'm falling deeper in love with you. *Volume Warning!*</p>
+
+          <div class="btn-container">
+            <button id="btn-start" class="btn-primary glow-btn" type="button">
+              <span>Do you still remember?</span>
+              <svg class="btn-arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="counter-badge">
+          <span>5 Months</span> • <span>Rawr</span> • <span>DhiRina</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREEN 2: Full Screen Video (Soda Poppie) -->
+    <section id="screen-2" class="screen">
+      <!-- Fullscreen Background Video -->
+      <div class="video-wrapper fullscreen-video-wrapper">
+        <video id="video-soda" class="bg-video" playsinline webkit-playsinline preload="auto" loop>
+          <source src="https://ik.imagekit.io/Dhixerz/ari/sodie.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay-tint"></div>
+      </div>
+
+      <!-- Center Box Overlay -->
+      <div class="screen-content video-center-content">
+        <div class="glass-message-box animate-pop-up">
+          <div class="music-disc-icon">
+            <span class="note-anim">🎵</span>
+            <span class="disc-emoji">🥤</span>
+          </div>
+          <h2 class="song-quote">"I asked you out that day with this song"</h2>
+          <p class="song-subquote">Our special song that started everything 💕</p>
+
+          <button id="btn-to-stage3" class="btn-primary glow-btn" type="button">
+            <span>We went from Soda Pop to...</span>
+            <svg class="btn-arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+              stroke-width="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREEN 3: Portrait Video (Digi Daga) -->
+    <section id="screen-3" class="screen">
+      <div class="screen-content portrait-stage-content">
+
+        <div class="portrait-card glassmorphism animate-pop-up">
+          <!-- Portrait Video Frame -->
+          <div class="portrait-video-frame">
+            <video id="video-digi" class="portrait-video" playsinline webkit-playsinline preload="auto" loop>
+              <source src="https://ik.imagekit.io/Dhixerz/ari/Digi%20Daga" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="frame-reflection"></div>
+          </div>
+
+          <!-- Description & Button -->
+          <div class="portrait-caption-box">
+            <h2 class="funny-title">To this unclie &lt;3 I love your humor babe!</h2>
+            <p class="funny-subtitle">You always know how to make me laugh like crazy</p>
+
+            <button id="btn-to-letter" class="btn-primary glow-btn" type="button">
+              <span>Something for you</span>
+              <span class="btn-emoji">💌</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SCREEN 4: The Love Letter (Surat) -->
+    <section id="screen-4" class="screen">
+      <div class="screen-content letter-stage-content">
+
+        <div class="letter-wrapper animate-pop-up">
+          <div class="letter-top-seal">
+            <span class="wax-seal">💖</span>
+          </div>
+
+          <article class="letter-card">
+            <header class="letter-header">
+              <div class="letter-badge">A Special Letter For You</div>
+              <h2 class="letter-title">My Dearest Love</h2>
+              <div class="letter-date">Happy 5 Months Anniversary • With all my heart</div>
+              <div class="letter-divider"></div>
+            </header>
+
+            <div class="letter-body">
+              <p class="letter-paragraph highlight-opener">
+                Hello! It's me again with my webbie &lt;3<br>
+                I hope you are not bored of this thingy i made for you babe.
+              </p>
+
+              <p class="letter-paragraph">
+                <strong>HAPPY 5 MONTHS ANNIVERSARY MY LADYYYY!</strong> Are you happy to be with me? I really want to
+                know your thoughts of me being your girlfriend, rate me on Insta pls 0-10. Babe I won't lie to you, the
+                past week has been super duper hard because I was missing you <em>A LOT</em>. I wanted to talk to you so
+                much, I wanted to know more about your days, do calls with you, but I do understand it's the VPN. But
+                babe, I hope you were doing well even without the VPN. What was your entertainment? Did you eat well?
+                Were you happy all the time? Anybody hitting on you? What were you doing? Did you have enough sleep? All
+                those questions have been weighing over me for the past couple of days.
+              </p>
+
+              <p class="letter-paragraph">
+                I really care about you babe, I do. I truly have never felt this way towards anyone before. I have never
+                checked any app as much as I checked my Insta to see whether you texted me or no, I have never craved
+                for someone like I do for you. I never felt my heart before, I thought it was just there HAHAHA but with
+                you... I long for you. I miss every part of you. Not talking to you for the whole day made me realized
+                how much of a fool I am for you. Every millisecond with you is priceless. I don't want
+                to lose you babe. Please stay &lt;3
+              </p>
+
+              <p class="letter-paragraph">
+                <strong>I AM SO HAPPY TO ANNOUNCE THAT WE HAVE BEEN DATING FOR 5 MONTHS! FIVE BABE FIVEEE!</strong> Like
+                Thailand 555555555. Glad to have you as part of my soul babe &lt;3 I hope both of us can stay happy
+                till we get to drink our soda pop together. Thank you for always being with me. We choose each other,
+                isn't that cool? Out of 8,31 billions of people, we decided to love us. I really love you babe! I'll
+                keep this brief because there are more words waiting for you! Go check out the rest of the webbie!
+              </p>
+            </div>
+
+            <footer class="letter-footer">
+              <div class="letter-sign">Forever Yours,</div>
+              <div class="letter-signature">Your Girlfriend ❤️</div>
+            </footer>
+          </article>
+
+          <!-- Final CTA Button -->
+          <div class="final-action-container">
+            <a id="btn-gift" href="https://love.for-you-always.my.id/gift-1789655270053" target="_self"
+              class="btn-primary glow-btn gift-btn">
+              <span>Press Me</span>
+              <span class="btn-emoji">🎁</span>
+            </a>
+            <p class="gift-hint">There's one more surprise waiting for you...</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
